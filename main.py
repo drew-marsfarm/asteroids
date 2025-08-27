@@ -13,7 +13,7 @@ def main():
         screen.fill("black")
 
         #last line
-        screen.flip()
+        pygame.display.flip()
 
 
 
