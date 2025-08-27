@@ -10,7 +10,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     while True:
-        screen.Surface.fill("black")
+        screen.fill("black")
 
         #last line
         screen.display.flip()
