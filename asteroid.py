@@ -24,4 +24,4 @@ class Asteroid(CircleShape):
         spawn_1 = Asteroid(self.position.x, self.position.y, new_radius)
         spawn_1.velocity = asteroid_angle1
         spawn_2 = Asteroid(self.position.x, self.position.y, new_radius)
-        spawn_2.velocity = 1.2 * asteroid_angle2
+        spawn_2.velocity = asteroid_angle2
