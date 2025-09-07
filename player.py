@@ -42,7 +42,7 @@ class Player(CircleShape):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
-    def shoot(self):
+    def shoot(self, dt):
         print("Cocked and loaded...")
         shot = Shot(0, 1)
         direction = pygame.Vector2(0,1).rotate(shot.rotation)
