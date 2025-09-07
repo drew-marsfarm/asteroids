@@ -36,15 +36,14 @@ class Player(CircleShape):
             self.move(-dt)
         if keys[pygame.K_SPACE]:
             print("Shooting...")
-            self.shoot(dt)
+            self.shoot(self.rotation, dt)
 
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
-    def shoot(self, dt):
+    def shoot(self, rotation, dt):
         print("Cocked and loaded...")
-        shot = Shot(0, 1)
-        direction = pygame.Vector2(0,1).rotate(shot.rotation)
-        self.position += direction * PLAYER_SHOOT_SPEED * dt
+        shot = Shot(0, 1, rotation)
+        self.position += shot.rotation * PLAYER_SHOOT_SPEED * dt
         print("Shot!")
