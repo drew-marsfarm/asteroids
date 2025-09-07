@@ -24,6 +24,6 @@ class Asteroid(CircleShape):
         print(asteroid_angle2)
         new_radius = self.radius - ASTEROID_MIN_RADIUS
         spawn_1 = Asteroid(self.position.x, self.position.y, new_radius)
-        spawn_1.velocity = asteroid_angle1
+        spawn_1.velocity = pygame.math.Vector2.rotate(self.velocity, asteroid_angle1)*1.2
         spawn_2 = Asteroid(self.position.x, self.position.y, new_radius)
-        spawn_2.velocity = asteroid_angle2
+        spawn_2.velocity = pygame.math.Vector2.rotate(self.velocity, asteroid_angle2)*1.2
