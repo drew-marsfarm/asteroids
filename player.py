@@ -43,6 +43,7 @@ class Player(CircleShape):
         self.position += forward * PLAYER_SPEED * dt
 
     def shoot(self):
+        print("Cocked and loaded...")
         shot = Shot(0, 1)
         shot.rotate(self.rotation)
         shot.velocity = shot.velocity * PLAYER_SHOOT_SPEED
