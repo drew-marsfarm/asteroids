@@ -18,12 +18,12 @@ class Asteroid(CircleShape):
         if self.radius <= ASTEROID_MIN_RADIUS:
             return
         angle_of_split = random.uniform(20, 50)
-        asteroid_angle1 = pygame.Vector2(self.position.x, self.position.y).rotate(angle_of_split)
-        asteroid_angle2 = pygame.Vector2(self.position.x, self.position.y).rotate(-angle_of_split)
+        asteroid_angle1 = self.velocity.rotate(angle_of_split)
+        asteroid_angle2 = self.velocity.rotate(-angle_of_split)
         print(asteroid_angle1)
         print(asteroid_angle2)
         new_radius = self.radius - ASTEROID_MIN_RADIUS
         spawn_1 = Asteroid(self.position.x, self.position.y, new_radius)
-        spawn_1.velocity = pygame.math.Vector2.rotate(self.velocity, asteroid_angle1)*1.2
+        spawn_1.velocity = asteroid_angle1 * 1.2
         spawn_2 = Asteroid(self.position.x, self.position.y, new_radius)
-        spawn_2.velocity = pygame.math.Vector2.rotate(self.velocity, asteroid_angle2)*1.2
+        spawn_2.velocity = asteroid_angle2 * 1.2
