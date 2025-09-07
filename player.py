@@ -44,7 +44,5 @@ class Player(CircleShape):
 
     def shoot(self, rotation, dt):
         print("Cocked and loaded...")
-        shot = Shot(0, 1, rotation)
-        direction = pygame.Vector2(0,1).rotate(shot.rotation)
-        shot.position += direction * PLAYER_SHOOT_SPEED * dt
-        print("Shot!")
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
